@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '@/styles/Home.module.css'
 import { Background, ContentsBtn, Header, Logo, LogOutBtn, MyMovieBtn, NavBar } from './main.styles'
 
 export default function Home() {
