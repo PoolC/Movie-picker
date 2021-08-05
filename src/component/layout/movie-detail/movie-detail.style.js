@@ -10,6 +10,8 @@ export const Background = styled.div`
 
 export const Main = styled.main`
     display: flex;
+    justify-content: space-between;
+    width: 100%;
     flex-direction: row;
     align-items: center;
 `
@@ -25,20 +27,20 @@ export const PosterImage = styled.img`
     width: 100%;
 `
 
-export const StyledReview = styled.div`
+export const StyledReviewContainer = styled.div`
     height: 60%;
-    width: 40%;
+    width: 60%;
     background-color: white;
 `
 
-export const MovieTitle = styled.div`
+export const StyledMovieTitle = styled.div`
     
 `
 
-export const Reviews = styled.ul`
+export const StyledReviewList = styled.ul`
 
 `
 
-export const ReviewItems = styled.li`
+export const StyledReviewItem = styled.li`
 
 `

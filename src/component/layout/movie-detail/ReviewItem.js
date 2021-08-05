@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-const ReviewItem = () => {
+import { StyledReviewItem } from './movie-detail.style';
+
+const ReviewItem = (props) => {
+    const [review, setReview] = useState(props.review);
+
+    // comments = [{}, {}, ...]
+    // comments.commentContent, comments.commentNickname
+    const [comments, setComments] = useState(props.review.reviews.comments);
+
     return (
-        <div>
-
-        </div>
+        <StyledReviewItem>
+            {review.reviews.reviewContent}
+        </StyledReviewItem>
     )
 }
 
