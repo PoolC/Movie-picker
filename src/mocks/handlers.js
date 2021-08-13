@@ -35,6 +35,7 @@ export const handlers = [
                 ctx.json([
                     {
                         reviews: {
+                            id: 3,
                             reviewNickname: "irumi1206",
                             reviewContent: `good! ${movieId}`,
                             recommendation_count: 5,
@@ -48,6 +49,7 @@ export const handlers = [
                     },
                     {
                         reviews: {
+                            id: 0,
                             reviewNickname: "irumi1206",
                             reviewContent: "good!",
                             recommendation_count: 5,
@@ -61,6 +63,7 @@ export const handlers = [
                     },
                     {
                         reviews: {
+                            id: 'a34',
                             reviewNickname: "irumi1206",
                             reviewContent: "good!",
                             recommendation_count: 5,
