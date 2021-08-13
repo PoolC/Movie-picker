@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
-import { useRecoilState, } from 'recoil';
-import { movieDetailAtom, reviewAtom } from '@recoil/movie-detail/movieDetail';
+import { useRecoilState, useResetRecoilState, } from 'recoil';
+import { movieDetailAtom, reviewAtom, reviewModalAtom } from '@recoil/movie-detail/movieDetail';
 import axios from 'axios';
 
 import Poster from '@component/layout/movie-detail/Poster'
 import ReviewList from '@component/layout/movie-detail/ReviewList';
 import YoutubeList from '@component/layout/movie-detail/YoutubeList';
-import { Background, Main } from '@component/layout/movie-detail/movie-detail.style';
+import { StyledBackground, StyledMain } from '@component/layout/movie-detail/movie-detail.style';
 
 
 const MovieDetail = ({ movieInfo, reviewList }) => {
     const [movieDetail, setMovieDetail] = useRecoilState(movieDetailAtom);
-    const [reviews, setReviews] = useRecoilState(reviewAtom)
+    const [reviews, setReviews] = useRecoilState(reviewAtom);
+    const [reviewModal, setReviewModal] = useRecoilState(reviewModalAtom);
     // const router = useRouter();
     // const { movieIdQuery } = router.query; // router.query는 /movie-detail/[movieId] 에서 movieId를 담고 있다.
 
@@ -23,13 +24,22 @@ const MovieDetail = ({ movieInfo, reviewList }) => {
     }, [])
 
     return (
-        <Background>
-            <Main>
+        <StyledBackground>
+            <StyledMain>
                 <Poster />
                 <ReviewList />
-            </Main>
+            </StyledMain>
             <YoutubeList />
-        </Background>
+            {
+                reviewModal
+                    ?
+                    <div>
+                        === Review Modal Opened ===
+                    </div>
+                    :
+                    null
+            }
+        </StyledBackground>
     )
 }
 

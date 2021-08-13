@@ -15,7 +15,11 @@ const ReviewList = () => {
                 CRUELLA
             </StyledMovieTitle>
             <StyledReviewList>
-                {reviews.map(review => <ReviewItem review={review} />)}
+                {reviews.map(review =>
+                    <React.Fragment key={review.reviews.id}>
+                        <ReviewItem review={review} />
+                    </React.Fragment>)
+                }
             </StyledReviewList>
         </StyledReviewContainer>
     )
